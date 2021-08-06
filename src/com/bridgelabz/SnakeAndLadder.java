@@ -11,6 +11,7 @@ public class SnakeAndLadder {
 		int ladder = 1;
 		int snake = 2;
 		int noPlay = 3;
+		int toWin;
 		System.out.println("Welcome to the Snake and Ladder Game");
 
 		/**
@@ -26,30 +27,31 @@ public class SnakeAndLadder {
 			 * get options
 			 */
 			int playerCheck = (int) Math.floor(Math.random() * 3 + 1);
-
-			switch (playerCheck) {
-			case 1:
-				PLAYER_POSITION = PLAYER_POSITION + Dice;
-				System.out.println("The player position after ladder is :" + PLAYER_POSITION);
-				break;
-			case 2:
-				PLAYER_POSITION = PLAYER_POSITION - Dice;
-				System.out.println("The player position after snake is :" + PLAYER_POSITION);
-				break;
-			case 3:
-				PLAYER_POSITION = 0;
-				System.out.println("There is no play and the player position is :" + PLAYER_POSITION);
-
-				/**
-				 * The player position will be set to zero if the player goes below zero
-				 */
-
-				if (PLAYER_POSITION < 0) {
-					System.out.println("You need to start again from starting position");
+			toWin = WINNING_POSITION - PLAYER_POSITION;
+			if (toWin > Dice) {
+				switch (playerCheck) {
+				case 1:
+					PLAYER_POSITION = PLAYER_POSITION + Dice;
+					System.out.println("The player position after ladder is :" + PLAYER_POSITION);
+					break;
+				case 2:
+					PLAYER_POSITION = PLAYER_POSITION - Dice;
+					System.out.println("The player position after snake is :" + PLAYER_POSITION);
+					break;
+				case 3:
 					PLAYER_POSITION = 0;
+					System.out.println("There is no play and the player position is :" + PLAYER_POSITION);
+
+					/**
+					 * The player position will be set to zero if the player goes below zero
+					 */
+
+					if (PLAYER_POSITION < 0) {
+						System.out.println("You need to start again from starting position");
+						PLAYER_POSITION = 0;
+					}
 				}
 			}
-
 		}
 	}
 }
