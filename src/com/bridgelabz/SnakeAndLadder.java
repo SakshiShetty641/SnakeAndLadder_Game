@@ -1,7 +1,7 @@
 package com.bridgelabz;
 /**
  * @author Sakshi Shetty
- * Purpose - To play the game with 2 player and check which player won the game
+ * Purpose - To count the number of times the dice was rolled
  */
 public class SnakeAndLadder {
 	public static final int WINNING_POSITION = 100;
