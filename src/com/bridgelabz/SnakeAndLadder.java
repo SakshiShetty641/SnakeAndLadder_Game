@@ -1,11 +1,7 @@
 package com.bridgelabz;
 /**
  * @author Sakshi Shetty
-<<<<<<< HEAD
- * Purpose - To ensure that the player gets the exact winning position 100
-=======
  * Purpose - To count the number of times the dice was rolled
->>>>>>> UC6_DiceCount
  */
 public class SnakeAndLadder {
 	public static final int WINNING_POSITION = 100;
